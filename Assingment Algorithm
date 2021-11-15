@@ -1,0 +1,16 @@
+The following algorithm is desgined to meet the following requirements.
+    1. No one gives gifts to the a member of the same family.
+    2. Each person gets exactly one gift.
+
+It DOES NOT guarantee is the follow:
+    1. that a person who gives to another person does get a gift from that person.
+
+Algorithm:
+for each f in families{
+	for each m in f{
+		randomly select family from available famililes called sF where count of sF.sM.isGifted = False > 0 
+		randomly select member from sF called sM where sM.isGifted = False
+		m.GiveTo = sM
+		sM.isGifted = True
+    }
+}
